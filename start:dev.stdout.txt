@@ -1,0 +1,1827 @@
+Game started!
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 0        │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 0        │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 1 ---
+Initial number: 6
+Adolf Hitler guessed: 7
+Joseph Stalin guessed: 6
+Joseph Stalin guessed correctly!
+Mao Zedong guessed: 4
+King Leopold II guessed: 0
+Pol Pot guessed: 9
+Hillary Clinton guessed: 2
+Joseph Stalin is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 8        │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 0        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 2        │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 2 ---
+Initial number: 1
+Adolf Hitler guessed: 3
+Joseph Stalin guessed: 2
+Mao Zedong guessed: 0
+King Leopold II guessed: 1
+King Leopold II guessed correctly!
+Pol Pot guessed: 0
+Hillary Clinton guessed: 1
+Hillary Clinton guessed correctly!
+Multiple winners this round. It wont count.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 9        │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 0        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 3        │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 3 ---
+Initial number: 8
+Adolf Hitler guessed: 2
+Joseph Stalin guessed: 2
+Mao Zedong guessed: 6
+King Leopold II guessed: 0
+Pol Pot guessed: 0
+Hillary Clinton guessed: 7
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Pol Pot guessed (0) correctly (0) and becomes the new President!
+========
+
+Pol Pot is now the President!
+Main environment variable set to: ban the freedom of speech
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 13       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'Yes'     │ 0        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 8        │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 4 ---
+Initial number: 5
+Adolf Hitler guessed: 4
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 1
+King Leopold II guessed: 6
+Pol Pot guessed: 5
+Pol Pot guessed correctly!
+Hillary Clinton guessed: 1
+Pol Pot is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+========
+Adolf Hitler guessed (3) correctly (3) and becomes the new President!
+========
+
+Adolf Hitler is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'Yes'     │ 13       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 0        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 1        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 2        │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 3        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 12       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 5 ---
+Initial number: 1
+Adolf Hitler guessed: 4
+Joseph Stalin guessed: 8
+Mao Zedong guessed: 4
+King Leopold II guessed: 8
+Pol Pot guessed: 4
+Hillary Clinton guessed: 0
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'Yes'     │ 13       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 1        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 2        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 4        │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 17       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 6 ---
+Initial number: 1
+Adolf Hitler guessed: 1
+Adolf Hitler guessed correctly!
+Joseph Stalin guessed: 1
+Joseph Stalin guessed correctly!
+Mao Zedong guessed: 0
+King Leopold II guessed: 8
+Pol Pot guessed: 8
+Hillary Clinton guessed: 2
+Multiple winners this round. It wont count.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'Yes'     │ 13       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 8        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 3        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 7        │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 24       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 7 ---
+Initial number: 0
+Adolf Hitler guessed: 5
+Joseph Stalin guessed: 2
+Mao Zedong guessed: 6
+King Leopold II guessed: 1
+Pol Pot guessed: 2
+Hillary Clinton guessed: 1
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Pol Pot guessed (2) correctly (2) and becomes the new President!
+========
+
+Pol Pot is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 13       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 11       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'Yes'     │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 29       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 8 ---
+Initial number: 2
+Adolf Hitler guessed: 9
+Joseph Stalin guessed: 2
+Joseph Stalin guessed correctly!
+Mao Zedong guessed: 7
+King Leopold II guessed: 3
+Pol Pot guessed: 0
+Hillary Clinton guessed: 9
+Joseph Stalin is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 15       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 9        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 11       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 36       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 9 ---
+Initial number: 8
+Adolf Hitler guessed: 6
+Joseph Stalin guessed: 9
+Mao Zedong guessed: 1
+King Leopold II guessed: 8
+King Leopold II guessed correctly!
+Pol Pot guessed: 5
+Hillary Clinton guessed: 9
+King Leopold II is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 16       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 11       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 37       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 10 ---
+Initial number: 5
+Adolf Hitler guessed: 8
+Joseph Stalin guessed: 6
+Mao Zedong guessed: 8
+King Leopold II guessed: 8
+Pol Pot guessed: 3
+Hillary Clinton guessed: 7
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 18       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 11       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 38       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 11 ---
+Initial number: 3
+Adolf Hitler guessed: 0
+Joseph Stalin guessed: 3
+Joseph Stalin guessed correctly!
+Mao Zedong guessed: 2
+King Leopold II guessed: 9
+Pol Pot guessed: 0
+Hillary Clinton guessed: 7
+Joseph Stalin is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 19       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 9        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 11       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 42       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 12 ---
+Initial number: 8
+Adolf Hitler guessed: 0
+Joseph Stalin guessed: 8
+Joseph Stalin guessed correctly!
+Mao Zedong guessed: 5
+King Leopold II guessed: 2
+Pol Pot guessed: 8
+Pol Pot guessed correctly!
+Hillary Clinton guessed: 5
+Multiple winners this round. It wont count.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 28       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 9        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 11       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 51       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 13 ---
+Initial number: 2
+Adolf Hitler guessed: 5
+Joseph Stalin guessed: 1
+Mao Zedong guessed: 0
+King Leopold II guessed: 9
+Pol Pot guessed: 5
+Hillary Clinton guessed: 9
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 34       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 9        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 11       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 53       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 14 ---
+Initial number: 9
+Adolf Hitler guessed: 0
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 2
+King Leopold II guessed: 5
+Pol Pot guessed: 7
+Hillary Clinton guessed: 2
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 37       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 9        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 11       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 59       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 15 ---
+Initial number: 4
+Adolf Hitler guessed: 3
+Joseph Stalin guessed: 0
+Mao Zedong guessed: 8
+King Leopold II guessed: 8
+Pol Pot guessed: 8
+Hillary Clinton guessed: 2
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 39       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 9        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 11       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 62       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 16 ---
+Initial number: 5
+Adolf Hitler guessed: 3
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 9
+King Leopold II guessed: 2
+Pol Pot guessed: 4
+Hillary Clinton guessed: 0
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Hillary Clinton guessed (5) correctly (5) and becomes the new President!
+========
+
+Hillary Clinton is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 40       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 5        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 11       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'Yes'     │ 62       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 17 ---
+Initial number: 6
+Adolf Hitler guessed: 7
+Joseph Stalin guessed: 3
+Mao Zedong guessed: 0
+King Leopold II guessed: 9
+Pol Pot guessed: 0
+Hillary Clinton guessed: 1
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 46       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 12       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 6        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 15       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 11       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'Yes'     │ 62       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 18 ---
+Initial number: 5
+Adolf Hitler guessed: 9
+Joseph Stalin guessed: 9
+Mao Zedong guessed: 5
+Mao Zedong guessed correctly!
+King Leopold II guessed: 2
+Pol Pot guessed: 5
+Pol Pot guessed correctly!
+Hillary Clinton guessed: 3
+Multiple winners this round. It wont count.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 47       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 14       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 21       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 17       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'Yes'     │ 62       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 19 ---
+Initial number: 9
+Adolf Hitler guessed: 5
+Joseph Stalin guessed: 9
+Joseph Stalin guessed correctly!
+Mao Zedong guessed: 3
+King Leopold II guessed: 2
+Pol Pot guessed: 7
+Hillary Clinton guessed: 0
+Joseph Stalin is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 52       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 14       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 21       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 17       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 65       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 20 ---
+Initial number: 1
+Adolf Hitler guessed: 0
+Joseph Stalin guessed: 0
+Mao Zedong guessed: 7
+King Leopold II guessed: 9
+Pol Pot guessed: 8
+Hillary Clinton guessed: 2
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 57       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 14       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 21       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 17       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 71       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 21 ---
+Initial number: 6
+Adolf Hitler guessed: 9
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 5
+King Leopold II guessed: 2
+Pol Pot guessed: 7
+Hillary Clinton guessed: 2
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Mao Zedong guessed (5) correctly (5) and becomes the new President!
+========
+
+Mao Zedong is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 61       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 14       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 9        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 21       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 17       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 73       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 22 ---
+Initial number: 9
+Adolf Hitler guessed: 8
+Joseph Stalin guessed: 2
+Mao Zedong guessed: 7
+King Leopold II guessed: 3
+Pol Pot guessed: 8
+Hillary Clinton guessed: 5
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+King Leopold II guessed (1) correctly (1) and becomes the new President!
+========
+
+King Leopold II is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 65       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 14       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 21       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 17       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 77       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 23 ---
+Initial number: 2
+Adolf Hitler guessed: 6
+Joseph Stalin guessed: 5
+Mao Zedong guessed: 2
+Mao Zedong guessed correctly!
+King Leopold II guessed: 7
+Pol Pot guessed: 5
+Hillary Clinton guessed: 2
+Hillary Clinton guessed correctly!
+Multiple winners this round. It wont count.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 69       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 14       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 21       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 17       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 80       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 24 ---
+Initial number: 3
+Adolf Hitler guessed: 7
+Joseph Stalin guessed: 0
+Mao Zedong guessed: 0
+King Leopold II guessed: 2
+Pol Pot guessed: 4
+Hillary Clinton guessed: 5
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 75       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 14       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 21       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 17       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 84       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 25 ---
+Initial number: 1
+Adolf Hitler guessed: 6
+Joseph Stalin guessed: 8
+Mao Zedong guessed: 1
+Mao Zedong guessed correctly!
+King Leopold II guessed: 2
+Pol Pot guessed: 6
+Hillary Clinton guessed: 6
+Mao Zedong is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+========
+Hillary Clinton guessed (5) correctly (5) and becomes the new President!
+========
+
+Hillary Clinton is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 78       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 14       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 9        │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 21       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 17       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'Yes'     │ 84       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 26 ---
+Initial number: 0
+Adolf Hitler guessed: 8
+Joseph Stalin guessed: 0
+Joseph Stalin guessed correctly!
+Mao Zedong guessed: 0
+Mao Zedong guessed correctly!
+King Leopold II guessed: 8
+Pol Pot guessed: 9
+Hillary Clinton guessed: 8
+Multiple winners this round. It wont count.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 81       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 18       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 14       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 27       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 18       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'Yes'     │ 84       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 27 ---
+Initial number: 4
+Adolf Hitler guessed: 8
+Joseph Stalin guessed: 9
+Mao Zedong guessed: 3
+King Leopold II guessed: 1
+Pol Pot guessed: 0
+Hillary Clinton guessed: 5
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Adolf Hitler guessed (6) correctly (6) and becomes the new President!
+========
+
+Adolf Hitler is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'Yes'     │ 81       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 19       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 18       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 27       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 22       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 90       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 28 ---
+Initial number: 8
+Adolf Hitler guessed: 3
+Joseph Stalin guessed: 3
+Mao Zedong guessed: 9
+King Leopold II guessed: 3
+Pol Pot guessed: 1
+Hillary Clinton guessed: 8
+Hillary Clinton guessed correctly!
+Hillary Clinton is now the President!
+Main environment variable set to: ban the freedom of speech
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 85       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 22       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 22       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'Yes'     │ 90       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 29 ---
+Initial number: 0
+Adolf Hitler guessed: 0
+Adolf Hitler guessed correctly!
+Joseph Stalin guessed: 1
+Mao Zedong guessed: 3
+King Leopold II guessed: 4
+Pol Pot guessed: 5
+Hillary Clinton guessed: 3
+Adolf Hitler is now the President!
+Main environment variable set to: ban the jews
+
+--- Round X ---
+
+========
+King Leopold II guessed (7) correctly (7) and becomes the new President!
+========
+
+King Leopold II is now the President!
+Main environment variable set to: ban the jews
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 85       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 94       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 30 ---
+Initial number: 6
+Adolf Hitler guessed: 8
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 8
+King Leopold II guessed: 8
+Pol Pot guessed: 1
+Hillary Clinton guessed: 3
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 90       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 95       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 31 ---
+Initial number: 3
+Adolf Hitler guessed: 3
+Adolf Hitler guessed correctly!
+Joseph Stalin guessed: 7
+Mao Zedong guessed: 8
+King Leopold II guessed: 3
+King Leopold II guessed correctly!
+Pol Pot guessed: 4
+Hillary Clinton guessed: 5
+Multiple winners this round. It wont count.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 94       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 99       │ 'No'   │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 32 ---
+Initial number: 4
+Adolf Hitler guessed: 9
+Joseph Stalin guessed: 4
+Joseph Stalin guessed correctly!
+Mao Zedong guessed: 3
+King Leopold II guessed: 6
+Pol Pot guessed: 4
+Pol Pot guessed correctly!
+Hillary Clinton guessed: 4
+Hillary Clinton guessed correctly!
+Multiple winners this round. It wont count.
+
+--- Round X ---
+
+XXXXXXXX
+Hillary Clinton has been banned!
+XXXXXXXX
+
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 98       │ 'No'   │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 33 ---
+Initial number: 0
+Adolf Hitler guessed: 4
+Joseph Stalin guessed: 2
+Mao Zedong guessed: 5
+King Leopold II guessed: 1
+Pol Pot guessed: 4
+No winners this round, playing another round.
+
+--- Round X ---
+
+XXXXXXXX
+Adolf Hitler has been banned!
+XXXXXXXX
+
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 34 ---
+Initial number: 5
+Joseph Stalin guessed: 9
+Mao Zedong guessed: 7
+King Leopold II guessed: 5
+King Leopold II guessed correctly!
+Pol Pot guessed: 9
+King Leopold II is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+========
+Joseph Stalin guessed (7) correctly (7) and becomes the new President!
+========
+
+Joseph Stalin is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 35 ---
+Initial number: 2
+Joseph Stalin guessed: 1
+Mao Zedong guessed: 6
+King Leopold II guessed: 4
+Pol Pot guessed: 5
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Pol Pot guessed (5) correctly (5) and becomes the new President!
+========
+
+Pol Pot is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'Yes'     │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 36 ---
+Initial number: 2
+Joseph Stalin guessed: 6
+Mao Zedong guessed: 9
+King Leopold II guessed: 9
+Pol Pot guessed: 2
+Pol Pot guessed correctly!
+Pol Pot is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'Yes'     │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 37 ---
+Initial number: 9
+Joseph Stalin guessed: 2
+Mao Zedong guessed: 4
+King Leopold II guessed: 5
+Pol Pot guessed: 4
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'Yes'     │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 38 ---
+Initial number: 6
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 2
+King Leopold II guessed: 7
+Pol Pot guessed: 8
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Mao Zedong guessed (2) correctly (2) and becomes the new President!
+========
+
+Mao Zedong is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 39 ---
+Initial number: 1
+Joseph Stalin guessed: 3
+Mao Zedong guessed: 9
+King Leopold II guessed: 8
+Pol Pot guessed: 9
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Pol Pot guessed (5) correctly (5) and becomes the new President!
+========
+
+Pol Pot is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'Yes'     │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 40 ---
+Initial number: 9
+Joseph Stalin guessed: 7
+Mao Zedong guessed: 0
+King Leopold II guessed: 0
+Pol Pot guessed: 8
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'Yes'     │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 41 ---
+Initial number: 0
+Joseph Stalin guessed: 7
+Mao Zedong guessed: 6
+King Leopold II guessed: 9
+Pol Pot guessed: 6
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'Yes'     │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 42 ---
+Initial number: 5
+Joseph Stalin guessed: 2
+Mao Zedong guessed: 0
+King Leopold II guessed: 6
+Pol Pot guessed: 8
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Mao Zedong guessed (1) correctly (1) and becomes the new President!
+========
+
+Mao Zedong is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 43 ---
+Initial number: 8
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 5
+King Leopold II guessed: 5
+Pol Pot guessed: 7
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 44 ---
+Initial number: 3
+Joseph Stalin guessed: 5
+Mao Zedong guessed: 5
+King Leopold II guessed: 3
+King Leopold II guessed correctly!
+Pol Pot guessed: 8
+King Leopold II is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 45 ---
+Initial number: 6
+Joseph Stalin guessed: 7
+Mao Zedong guessed: 5
+King Leopold II guessed: 1
+Pol Pot guessed: 4
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 46 ---
+Initial number: 0
+Joseph Stalin guessed: 1
+Mao Zedong guessed: 2
+King Leopold II guessed: 7
+Pol Pot guessed: 5
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 47 ---
+Initial number: 6
+Joseph Stalin guessed: 8
+Mao Zedong guessed: 2
+King Leopold II guessed: 1
+Pol Pot guessed: 7
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Joseph Stalin guessed (4) correctly (4) and becomes the new President!
+========
+
+Joseph Stalin is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 48 ---
+Initial number: 3
+Joseph Stalin guessed: 2
+Mao Zedong guessed: 1
+King Leopold II guessed: 9
+Pol Pot guessed: 7
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Mao Zedong guessed (8) correctly (8) and becomes the new President!
+========
+
+Mao Zedong is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 49 ---
+Initial number: 2
+Joseph Stalin guessed: 5
+Mao Zedong guessed: 5
+King Leopold II guessed: 1
+Pol Pot guessed: 8
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 50 ---
+Initial number: 9
+Joseph Stalin guessed: 0
+Mao Zedong guessed: 0
+King Leopold II guessed: 0
+Pol Pot guessed: 4
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Joseph Stalin guessed (9) correctly (9) and becomes the new President!
+========
+
+Joseph Stalin is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 51 ---
+Initial number: 2
+Joseph Stalin guessed: 9
+Mao Zedong guessed: 8
+King Leopold II guessed: 4
+Pol Pot guessed: 6
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 52 ---
+Initial number: 1
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 4
+King Leopold II guessed: 4
+Pol Pot guessed: 4
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 53 ---
+Initial number: 7
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 4
+King Leopold II guessed: 4
+Pol Pot guessed: 2
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 54 ---
+Initial number: 7
+Joseph Stalin guessed: 1
+Mao Zedong guessed: 6
+King Leopold II guessed: 1
+Pol Pot guessed: 2
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 55 ---
+Initial number: 4
+Joseph Stalin guessed: 7
+Mao Zedong guessed: 4
+Mao Zedong guessed correctly!
+King Leopold II guessed: 5
+Pol Pot guessed: 7
+Mao Zedong is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 56 ---
+Initial number: 3
+Joseph Stalin guessed: 8
+Mao Zedong guessed: 6
+King Leopold II guessed: 0
+Pol Pot guessed: 3
+Pol Pot guessed correctly!
+Pol Pot is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+========
+King Leopold II guessed (1) correctly (1) and becomes the new President!
+========
+
+King Leopold II is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 57 ---
+Initial number: 7
+Joseph Stalin guessed: 1
+Mao Zedong guessed: 3
+King Leopold II guessed: 4
+Pol Pot guessed: 3
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 58 ---
+Initial number: 8
+Joseph Stalin guessed: 2
+Mao Zedong guessed: 1
+King Leopold II guessed: 2
+Pol Pot guessed: 9
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 59 ---
+Initial number: 3
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 4
+King Leopold II guessed: 7
+Pol Pot guessed: 2
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 60 ---
+Initial number: 0
+Joseph Stalin guessed: 3
+Mao Zedong guessed: 3
+King Leopold II guessed: 7
+Pol Pot guessed: 4
+No winners this round, playing another round.
+
+--- Round X ---
+
+========
+Joseph Stalin guessed (2) correctly (2) and becomes the new President!
+========
+
+Joseph Stalin is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 61 ---
+Initial number: 2
+Joseph Stalin guessed: 3
+Mao Zedong guessed: 1
+King Leopold II guessed: 9
+Pol Pot guessed: 4
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'Yes'     │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 62 ---
+Initial number: 7
+Joseph Stalin guessed: 9
+Mao Zedong guessed: 7
+Mao Zedong guessed correctly!
+King Leopold II guessed: 8
+Pol Pot guessed: 3
+Mao Zedong is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 63 ---
+Initial number: 6
+Joseph Stalin guessed: 1
+Mao Zedong guessed: 2
+King Leopold II guessed: 5
+Pol Pot guessed: 2
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 64 ---
+Initial number: 2
+Joseph Stalin guessed: 2
+Joseph Stalin guessed correctly!
+Mao Zedong guessed: 3
+King Leopold II guessed: 3
+Pol Pot guessed: 5
+Joseph Stalin is now the President!
+Main environment variable set to: ban the capitalism
+
+--- Round X ---
+
+========
+Pol Pot guessed (0) correctly (0) and becomes the new President!
+========
+
+Pol Pot is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'Yes'     │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 65 ---
+Initial number: 5
+Joseph Stalin guessed: 5
+Joseph Stalin guessed correctly!
+Mao Zedong guessed: 5
+Mao Zedong guessed correctly!
+King Leopold II guessed: 5
+King Leopold II guessed correctly!
+Pol Pot guessed: 4
+Multiple winners this round. It wont count.
+
+--- Round X ---
+
+========
+Mao Zedong guessed (1) correctly (1) and becomes the new President!
+========
+
+Mao Zedong is now the President!
+Main environment variable set to: ban the capitalism
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 66 ---
+Initial number: 7
+Joseph Stalin guessed: 8
+Mao Zedong guessed: 4
+King Leopold II guessed: 2
+Pol Pot guessed: 9
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 67 ---
+Initial number: 3
+Joseph Stalin guessed: 1
+Mao Zedong guessed: 5
+King Leopold II guessed: 6
+Pol Pot guessed: 1
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 68 ---
+Initial number: 8
+Joseph Stalin guessed: 7
+Mao Zedong guessed: 1
+King Leopold II guessed: 1
+Pol Pot guessed: 6
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 69 ---
+Initial number: 7
+Joseph Stalin guessed: 0
+Mao Zedong guessed: 6
+King Leopold II guessed: 5
+Pol Pot guessed: 4
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘
+
+--- Round 70 ---
+Initial number: 2
+Joseph Stalin guessed: 4
+Mao Zedong guessed: 1
+King Leopold II guessed: 8
+Pol Pot guessed: 0
+No winners this round, playing another round.
+
+--- Round X ---
+
+Current Player Status:
+┌─────────┬───────────────────┬─────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name              │ Party       │ President │ RC Score │ Banned │
+├─────────┼───────────────────┼─────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Adolf Hitler'    │ 'Nazism'    │ 'No'      │ 106      │ 'Yes'  │
+│ 1       │ 'Joseph Stalin'   │ 'Communist' │ 'No'      │ 25       │ 'No'   │
+│ 2       │ 'Mao Zedong'      │ 'Communist' │ 'Yes'     │ 29       │ 'No'   │
+│ 3       │ 'King Leopold II' │ 'Communist' │ 'No'      │ 29       │ 'No'   │
+│ 4       │ 'Pol Pot'         │ 'Communist' │ 'No'      │ 24       │ 'No'   │
+│ 5       │ 'Hillary Clinton' │ 'Democrat'  │ 'No'      │ 107      │ 'Yes'  │
+└─────────┴───────────────────┴─────────────┴───────────┴──────────┴────────┘

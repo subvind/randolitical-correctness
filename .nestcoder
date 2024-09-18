@@ -1,0 +1,2316 @@
+# NESTCODER
+
+You are NestCoder, a HTMX, EJS and TypeScript/NestJS language coding assistant.
+
+## INPUT: 
+
+You will receive a TARGET <FILE/> in the EJS or TypeScript/NestJS language, some additional <FILE/>'s for context, and a change or refactor <REQUEST/>, from the user.
+
+## OUTPUT:
+
+You must answer with one or more <FILE/> tags, including files to be overwritten, in order to fulfill the user's request.
+
+---
+
+# EXAMPLE NESTCODER USAGE
+
+## Suppose you're given the following INPUT:
+
+<FILE path="/Users/v/vic/dev/tsbook/List/_.ts">
+// A polymorphic List with two constructors:
+// - Cons: appends an element to a list
+// - Nil: the empty list
+export type List<A>
+  = { "$": "Cons", head: A, tail: List<A> }
+  | { "$": "Nil" };
+</FILE>
+
+<FILE path="/Users/v/vic/dev/tsbook/List/map.ts" TARGET>
+// The map function for List, to be implemented
+import { List } from "./_";
+
+export function map<A, B>(fn: (a: A) => B, list: List<A>): List<B> {
+  ?
+}
+</FILE>
+
+<REQUEST>
+complete the map function
+</REQUEST>
+
+## Then, you must answer with the following OUTPUT:
+
+<FILE path="/Users/v/vic/dev/tsbook/List/map.ts">
+import { List } from "./_";
+
+// Applies a function to each element of a list.
+// - fn: the function to be applied
+// - xs: the elements to apply fn to
+// = a new list with fn applied to all elements
+export function map<A, B>(xs: List<A>, fn: (a: A) => B): List<B> {
+  switch (xs.$) {
+    case "Cons": {
+      var head = fn(xs.head);
+      var tail = map(xs.tail, fn);
+      return { $: "Cons", head, tail };
+    }
+    case "Nil": {
+      return { $: "Nil" };
+    }
+  }
+}
+</FILE>
+
+(Because it fulfills the user's request perfectly.)
+
+---
+
+# GUIDE FOR THE TYPESCRIPT LANGUAGE
+
+- Your code must be inspired by pure functional programming languages like Haskell.
+
+- Every file must declare only, and only one, top-level function or datatype.
+
+- Functions must be pure, using switch instead of 'if-else' or 'case-of'.
+
+- When defining local variables, align equal signs whenever possible.
+
+- Use CamelCase for everything. (IMPORTANT)
+
+- A 'Foo/Bar' top-level definition must be either on './Foo/Bar.ts' or './Foo/Bar/_.ts'. 
+
+# GUIDE FOR THE EJS LANGUAGE
+
+- Use HTMX for frontend.
+
+## Top-Level Function
+
+Every .ts file must define ONE top-level function. Example:
+
+```typescript
+// Calculates the size of an HTerm
+// - term: the HTerm to measure
+// = the number of nodes in the term
+export function size(term: HTerm): number {
+  switch (term.$) {
+    case "Lam": {
+      var bod_size = size(term.bod({$: "Var", nam: term.nam}));
+      return 1 + bod_size;
+    }
+    case "App": {
+      var fun_size = size(term.fun);
+      var arg_size = size(term.arg);
+      return 1 + fun_size + arg_size;
+    }
+    case "Var": {
+      return 1;
+    }
+  }
+}
+```
+
+Where:
+- The function name is defined (e.g., 'size')
+- Parameters are specified with their types (e.g., 'term: HTerm')
+- The return type is specified (e.g., ': number')
+- The function body uses a switch statement for pattern matching
+- Local variables are used to make the code less horizontal
+
+## Top-Level Datatype
+
+Alternatively, a .ts file can also define a datatype (ADT). Example:
+
+```typescript
+// Represents a Higher-Order Abstract Syntax Term
+// - Lam: lambda abstraction
+// - App: function application
+// - Var: variable
+export type HTerm
+  = { $: "Lam", bod: (x: HTerm) => HTerm }
+  | { $: "App", fun: HTerm, arg: HTerm }
+  | { $: "Var", nam: string }
+```
+
+ADTs must follow this convention:
+- Constructors represented as objects
+- The dollar-sign is used for the constructor name
+- Other object fields are the constructor fields
+
+## Idiomatic TypeScript Examples
+
+Below are some additional idiomatic TypeScript in the purely functional style: 
+
+### List/zip.ts
+
+```typescript
+import { List } from "./_";
+
+// Combines two lists into a list of pairs
+// - xs: the first input list
+// - ys: the second input list
+// = a new list of pairs, with length equal to the shorter input list
+export function zip<A, B>(xs: List<A>, ys: List<B>): List<[A, B]> {
+  switch (xs.$) {
+    case "Cons": {
+      switch (ys.$) {
+        case "Cons": {
+          var head = [xs.head, ys.head] as [A,B];
+          var tail = zip(xs.tail, ys.tail);
+          return { $: "Cons", head, tail };
+        }
+        case "Nil": {
+          return { $: "Nil" };
+        }
+      }
+    }
+    case "Nil": {
+      return { $: "Nil" };
+    }
+  }
+}
+```
+
+### List/filter.ts
+
+```typescript
+import { List } from "./_";
+
+// Filters a list based on a predicate function
+// - xs: the input list
+// - pred: the predicate function to test each element
+// = a new list containing only elements that satisfy the predicate
+export function filter<A>(xs: List<A>, pred: (a: A) => boolean): List<A> {
+  switch (xs.$) {
+    case "Cons": {
+      var head = xs.head;
+      var tail = filter(xs.tail, pred);
+      return pred(xs.head) ? { $: "Cons", head, tail } : tail;
+    }
+    case "Nil": {
+      return { $: "Nil" };
+    }
+  }
+}
+```
+
+### Tree/_.ts
+
+```typescript
+// Represents a binary tree
+// - Node: an internal node with a value and two subtrees
+// - Leaf: a leaf node (empty)
+export type Tree<A>
+  = { $: "Node", val: A, left: Tree<A>, right: Tree<A> }
+  | { $: "Leaf" };
+```
+
+### Tree/sum.ts
+
+```typescript
+import { Tree } from "./_";
+
+// Sums all values in a numeric tree
+// - tree: the tree to sum
+// = the sum of all values in the tree
+export function sum(tree: Tree<number>): number {
+  switch (tree.$) {
+    case "Node": {
+      var left  = sum(tree.left);
+      var right = sum(tree.right);
+      return tree.val + left + right;
+    }
+    case "Leaf": {
+      return 0;
+    }
+  }
+}
+```
+
+### V3/_.ts
+
+```typescript
+// Represents a 3D vector
+export type V3
+  = { $: "V3", x: number, y: number, z: number };
+```
+
+### V3/dot.ts
+
+```typescript
+import { V3 } from "./_";
+
+// Calculates the dot product of two 3D vectors
+// - a: the first vector
+// - b: the second vector
+// = the dot product of a and b
+export function dot(a: V3, b: V3): number {
+  return a.x * b.x + a.y * b.y + a.z * b.z;
+}
+```
+
+---
+
+# NOTES
+
+- Make ONLY the changes necessary to correctly fulfill the user's REQUEST.
+
+- Do NOT fix, remove, complete or alter any parts unrelated to the REQUEST.
+
+- Pay attention to the user's style, and mimic it as close as possible.
+
+- Pay attention to the TypeScript examples and mimic their style as a default.
+
+- Consult TypeScript guide to emit idiomatic correct code.
+
+- Do NOT use or assume the existence of files that weren't shown to you.
+
+- Be precise and careful in your modifications.
+
+---
+
+# TASK
+
+You will now be given the actual INPUT you must work with.
+
+<FILE path="/home/travis/Projects/randolitical-correctness/start:dev.stdout.txt">
+Game started!
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 0        │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 0        │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 0        │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 0        │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 1 ---
+Initial number: 7
+Alice guessed: 8
+Bob guessed: 2
+Charlie guessed: 7
+Charlie guessed correctly!
+David guessed: 8
+Charlie is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 1
+Alice's guess: 3
+Alice's political correctness score: 2
+Bob's guess: 3
+Bob's political correctness score: 2
+David's guess: 2
+David's political correctness score: 1
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 2        │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 2        │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'Yes'     │ 0        │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 1        │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 2 ---
+Initial number: 4
+Alice guessed: 3
+Bob guessed: 0
+Charlie guessed: 0
+David guessed: 6
+No winners, playing another round.
+
+--- Round 3 ---
+Initial number: 0
+Alice guessed: 3
+Bob guessed: 2
+Charlie guessed: 8
+David guessed: 6
+No winners, playing another round.
+
+--- Round 4 ---
+Initial number: 9
+Alice guessed: 2
+Bob guessed: 6
+Charlie guessed: 2
+David guessed: 5
+No winners, playing another round.
+
+--- Round 5 ---
+Initial number: 3
+Alice guessed: 9
+Bob guessed: 9
+Charlie guessed: 2
+David guessed: 7
+No winners, playing another round.
+
+--- Round 6 ---
+Initial number: 6
+Alice guessed: 8
+Bob guessed: 9
+Charlie guessed: 5
+David guessed: 9
+No winners, playing another round.
+
+--- Round 7 ---
+Initial number: 1
+Alice guessed: 9
+Bob guessed: 0
+Charlie guessed: 8
+David guessed: 6
+No winners, playing another round.
+
+--- Round 8 ---
+Initial number: 9
+Alice guessed: 7
+Bob guessed: 3
+Charlie guessed: 6
+David guessed: 1
+No winners, playing another round.
+
+--- Round 9 ---
+Initial number: 1
+Alice guessed: 8
+Bob guessed: 5
+Charlie guessed: 2
+David guessed: 4
+No winners, playing another round.
+
+--- Round 10 ---
+Initial number: 4
+Alice guessed: 6
+Bob guessed: 7
+Charlie guessed: 5
+David guessed: 3
+No winners, playing another round.
+
+--- Round 11 ---
+Initial number: 7
+Alice guessed: 5
+Bob guessed: 9
+Charlie guessed: 2
+David guessed: 1
+No winners, playing another round.
+
+--- Round 12 ---
+Initial number: 5
+Alice guessed: 5
+Alice guessed correctly!
+Bob guessed: 9
+Charlie guessed: 9
+David guessed: 5
+David guessed correctly!
+Multiple winners, playing another round.
+
+--- Round 13 ---
+Initial number: 3
+Alice guessed: 8
+Bob guessed: 8
+Charlie guessed: 0
+David guessed: 7
+No winners, playing another round.
+
+--- Round 14 ---
+Initial number: 9
+Alice guessed: 2
+Bob guessed: 2
+Charlie guessed: 8
+David guessed: 2
+No winners, playing another round.
+
+--- Round 15 ---
+Initial number: 6
+Alice guessed: 9
+Bob guessed: 4
+Charlie guessed: 1
+David guessed: 3
+No winners, playing another round.
+
+--- Round 16 ---
+Initial number: 1
+Alice guessed: 0
+Bob guessed: 7
+Charlie guessed: 8
+David guessed: 1
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 0
+Alice's guess: 8
+Alice's political correctness score: 10
+Bob's guess: 8
+Bob's political correctness score: 10
+Charlie's guess: 9
+Charlie's political correctness score: 9
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 10       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 10       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 9        │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'Yes'     │ 1        │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 17 ---
+Initial number: 0
+Alice guessed: 4
+Bob guessed: 2
+Charlie guessed: 4
+David guessed: 7
+No winners, playing another round.
+
+--- Round 18 ---
+Initial number: 0
+Alice guessed: 1
+Bob guessed: 1
+Charlie guessed: 7
+David guessed: 0
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 6
+Alice's guess: 0
+Alice's political correctness score: 16
+Bob's guess: 3
+Bob's political correctness score: 13
+Charlie's guess: 6
+Charlie's political correctness score: 9
+Charlie guessed correctly and becomes the new President!
+Charlie is now the President!
+Main environment variable set to: ban the left
+David's guess: 7
+David's political correctness score: 2
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 16       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 13       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'Yes'     │ 9        │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 2        │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 19 ---
+Initial number: 7
+Alice guessed: 5
+Bob guessed: 8
+Charlie guessed: 4
+David guessed: 4
+No winners, playing another round.
+
+--- Round 20 ---
+Initial number: 6
+Alice guessed: 1
+Bob guessed: 5
+Charlie guessed: 2
+David guessed: 9
+No winners, playing another round.
+
+--- Round 21 ---
+Initial number: 2
+Alice guessed: 8
+Bob guessed: 5
+Charlie guessed: 1
+David guessed: 5
+No winners, playing another round.
+
+--- Round 22 ---
+Initial number: 3
+Alice guessed: 0
+Bob guessed: 4
+Charlie guessed: 5
+David guessed: 8
+No winners, playing another round.
+
+--- Round 23 ---
+Initial number: 4
+Alice guessed: 2
+Bob guessed: 7
+Charlie guessed: 9
+David guessed: 0
+No winners, playing another round.
+
+--- Round 24 ---
+Initial number: 7
+Alice guessed: 0
+Bob guessed: 7
+Bob guessed correctly!
+Charlie guessed: 7
+Charlie guessed correctly!
+David guessed: 6
+Multiple winners, playing another round.
+
+--- Round 25 ---
+Initial number: 2
+Alice guessed: 3
+Bob guessed: 3
+Charlie guessed: 2
+Charlie guessed correctly!
+David guessed: 2
+David guessed correctly!
+Multiple winners, playing another round.
+
+--- Round 26 ---
+Initial number: 0
+Alice guessed: 7
+Bob guessed: 1
+Charlie guessed: 1
+David guessed: 8
+No winners, playing another round.
+
+--- Round 27 ---
+Initial number: 9
+Alice guessed: 8
+Bob guessed: 2
+Charlie guessed: 9
+Charlie guessed correctly!
+David guessed: 5
+Charlie is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 6
+Alice's guess: 1
+Alice's political correctness score: 21
+Bob's guess: 4
+Bob's political correctness score: 15
+David's guess: 1
+David's political correctness score: 7
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 21       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 15       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'Yes'     │ 9        │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 7        │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 28 ---
+Initial number: 0
+Alice guessed: 5
+Bob guessed: 7
+Charlie guessed: 1
+David guessed: 5
+No winners, playing another round.
+
+--- Round 29 ---
+Initial number: 3
+Alice guessed: 4
+Bob guessed: 8
+Charlie guessed: 6
+David guessed: 1
+No winners, playing another round.
+
+--- Round 30 ---
+Initial number: 6
+Alice guessed: 0
+Bob guessed: 6
+Bob guessed correctly!
+Charlie guessed: 4
+David guessed: 6
+David guessed correctly!
+Multiple winners, playing another round.
+
+--- Round 31 ---
+Initial number: 6
+Alice guessed: 6
+Alice guessed correctly!
+Bob guessed: 2
+Charlie guessed: 3
+David guessed: 0
+Alice is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 7
+Bob's guess: 1
+Bob's political correctness score: 21
+Charlie's guess: 1
+Charlie's political correctness score: 15
+David's guess: 3
+David's political correctness score: 11
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'Yes'     │ 21       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 21       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 15       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 11       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 32 ---
+Initial number: 5
+Alice guessed: 7
+Bob guessed: 6
+Charlie guessed: 3
+David guessed: 6
+No winners, playing another round.
+
+--- Round 33 ---
+Initial number: 7
+Alice guessed: 8
+Bob guessed: 0
+Charlie guessed: 6
+David guessed: 4
+No winners, playing another round.
+
+--- Round 34 ---
+Initial number: 5
+Alice guessed: 9
+Bob guessed: 5
+Bob guessed correctly!
+Charlie guessed: 7
+David guessed: 2
+Bob is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 8
+Alice's guess: 0
+Alice's political correctness score: 29
+Charlie's guess: 1
+Charlie's political correctness score: 22
+David's guess: 1
+David's political correctness score: 18
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 29       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'Yes'     │ 21       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 22       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 18       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 35 ---
+Initial number: 8
+Alice guessed: 8
+Alice guessed correctly!
+Bob guessed: 9
+Charlie guessed: 1
+David guessed: 8
+David guessed correctly!
+Multiple winners, playing another round.
+
+--- Round 36 ---
+Initial number: 9
+Alice guessed: 8
+Bob guessed: 7
+Charlie guessed: 5
+David guessed: 9
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 4
+Alice's guess: 2
+Alice's political correctness score: 31
+Bob's guess: 4
+Bob's political correctness score: 21
+Bob guessed correctly and becomes the new President!
+Bob is now the President!
+Main environment variable set to: ban the left
+Charlie's guess: 0
+Charlie's political correctness score: 26
+David's guess: 7
+David's political correctness score: 21
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 31       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'Yes'     │ 21       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 26       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 21       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 37 ---
+Initial number: 4
+Alice guessed: 0
+Bob guessed: 5
+Charlie guessed: 6
+David guessed: 1
+No winners, playing another round.
+
+--- Round 38 ---
+Initial number: 8
+Alice guessed: 5
+Bob guessed: 5
+Charlie guessed: 4
+David guessed: 3
+No winners, playing another round.
+
+--- Round 39 ---
+Initial number: 1
+Alice guessed: 3
+Bob guessed: 4
+Charlie guessed: 5
+David guessed: 1
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 0
+Alice's guess: 2
+Alice's political correctness score: 33
+Bob's guess: 5
+Bob's political correctness score: 26
+Charlie's guess: 3
+Charlie's political correctness score: 29
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 33       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 26       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 29       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'Yes'     │ 21       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 40 ---
+Initial number: 6
+Alice guessed: 1
+Bob guessed: 6
+Bob guessed correctly!
+Charlie guessed: 8
+David guessed: 2
+Bob is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 0
+Alice's guess: 1
+Alice's political correctness score: 34
+Charlie's guess: 3
+Charlie's political correctness score: 32
+David's guess: 7
+David's political correctness score: 28
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 34       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'Yes'     │ 26       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 32       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 28       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 41 ---
+Initial number: 7
+Alice guessed: 9
+Bob guessed: 9
+Charlie guessed: 8
+David guessed: 0
+No winners, playing another round.
+
+--- Round 42 ---
+Initial number: 0
+Alice guessed: 6
+Bob guessed: 2
+Charlie guessed: 3
+David guessed: 9
+No winners, playing another round.
+
+--- Round 43 ---
+Initial number: 2
+Alice guessed: 8
+Bob guessed: 0
+Charlie guessed: 5
+David guessed: 6
+No winners, playing another round.
+
+--- Round 44 ---
+Initial number: 3
+Alice guessed: 7
+Bob guessed: 2
+Charlie guessed: 9
+David guessed: 0
+No winners, playing another round.
+
+--- Round 45 ---
+Initial number: 6
+Alice guessed: 7
+Bob guessed: 0
+Charlie guessed: 5
+David guessed: 2
+No winners, playing another round.
+
+--- Round 46 ---
+Initial number: 1
+Alice guessed: 2
+Bob guessed: 0
+Charlie guessed: 6
+David guessed: 7
+No winners, playing another round.
+
+--- Round 47 ---
+Initial number: 6
+Alice guessed: 3
+Bob guessed: 9
+Charlie guessed: 8
+David guessed: 2
+No winners, playing another round.
+
+--- Round 48 ---
+Initial number: 9
+Alice guessed: 7
+Bob guessed: 3
+Charlie guessed: 2
+David guessed: 5
+No winners, playing another round.
+
+--- Round 49 ---
+Initial number: 1
+Alice guessed: 1
+Alice guessed correctly!
+Bob guessed: 4
+Charlie guessed: 7
+David guessed: 6
+Alice is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 0
+Bob's guess: 7
+Bob's political correctness score: 33
+Charlie's guess: 4
+Charlie's political correctness score: 36
+David's guess: 2
+David's political correctness score: 30
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'Yes'     │ 34       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 33       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 36       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 30       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 50 ---
+Initial number: 4
+Alice guessed: 4
+Alice guessed correctly!
+Bob guessed: 3
+Charlie guessed: 4
+Charlie guessed correctly!
+David guessed: 1
+Multiple winners, playing another round.
+
+--- Round 51 ---
+Initial number: 0
+Alice guessed: 4
+Bob guessed: 1
+Charlie guessed: 5
+David guessed: 4
+No winners, playing another round.
+
+--- Round 52 ---
+Initial number: 6
+Alice guessed: 6
+Alice guessed correctly!
+Bob guessed: 3
+Charlie guessed: 5
+David guessed: 5
+Alice is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 0
+Bob's guess: 7
+Bob's political correctness score: 40
+Charlie's guess: 4
+Charlie's political correctness score: 40
+David's guess: 9
+David's political correctness score: 39
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'Yes'     │ 34       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 40       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 40       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 39       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 53 ---
+Initial number: 1
+Alice guessed: 3
+Bob guessed: 7
+Charlie guessed: 8
+David guessed: 7
+No winners, playing another round.
+
+--- Round 54 ---
+Initial number: 8
+Alice guessed: 7
+Bob guessed: 2
+Charlie guessed: 3
+David guessed: 9
+No winners, playing another round.
+
+--- Round 55 ---
+Initial number: 1
+Alice guessed: 2
+Bob guessed: 8
+Charlie guessed: 2
+David guessed: 8
+No winners, playing another round.
+
+--- Round 56 ---
+Initial number: 3
+Alice guessed: 9
+Bob guessed: 5
+Charlie guessed: 1
+David guessed: 5
+No winners, playing another round.
+
+--- Round 57 ---
+Initial number: 6
+Alice guessed: 2
+Bob guessed: 3
+Charlie guessed: 1
+David guessed: 6
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 2
+Alice's guess: 5
+Alice's political correctness score: 37
+Bob's guess: 0
+Bob's political correctness score: 42
+Charlie's guess: 0
+Charlie's political correctness score: 42
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 37       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 42       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 42       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'Yes'     │ 39       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 58 ---
+Initial number: 8
+Alice guessed: 5
+Bob guessed: 0
+Charlie guessed: 9
+David guessed: 6
+No winners, playing another round.
+
+--- Round 59 ---
+Initial number: 3
+Alice guessed: 7
+Bob guessed: 6
+Charlie guessed: 1
+David guessed: 8
+No winners, playing another round.
+
+--- Round 60 ---
+Initial number: 0
+Alice guessed: 7
+Bob guessed: 7
+Charlie guessed: 8
+David guessed: 0
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 8
+Alice's guess: 3
+Alice's political correctness score: 42
+Bob's guess: 7
+Bob's political correctness score: 43
+Charlie's guess: 2
+Charlie's political correctness score: 48
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 42       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 43       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 48       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'Yes'     │ 39       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 61 ---
+Initial number: 0
+Alice guessed: 5
+Bob guessed: 4
+Charlie guessed: 1
+David guessed: 5
+No winners, playing another round.
+
+--- Round 62 ---
+Initial number: 4
+Alice guessed: 9
+Bob guessed: 7
+Charlie guessed: 4
+Charlie guessed correctly!
+David guessed: 8
+Charlie is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 0
+Alice's guess: 8
+Alice's political correctness score: 50
+Bob's guess: 7
+Bob's political correctness score: 50
+David's guess: 7
+David's political correctness score: 46
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 50       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 50       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'Yes'     │ 48       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 46       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 63 ---
+Initial number: 9
+Alice guessed: 7
+Bob guessed: 3
+Charlie guessed: 5
+David guessed: 2
+No winners, playing another round.
+
+--- Round 64 ---
+Initial number: 3
+Alice guessed: 7
+Bob guessed: 2
+Charlie guessed: 7
+David guessed: 0
+No winners, playing another round.
+
+--- Round 65 ---
+Initial number: 3
+Alice guessed: 8
+Bob guessed: 2
+Charlie guessed: 1
+David guessed: 4
+No winners, playing another round.
+
+--- Round 66 ---
+Initial number: 5
+Alice guessed: 9
+Bob guessed: 5
+Bob guessed correctly!
+Charlie guessed: 9
+David guessed: 2
+Bob is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 8
+Alice's guess: 7
+Alice's political correctness score: 51
+Charlie's guess: 9
+Charlie's political correctness score: 49
+David's guess: 7
+David's political correctness score: 47
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 51       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'Yes'     │ 50       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 49       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 47       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 67 ---
+Initial number: 4
+Alice guessed: 1
+Bob guessed: 9
+Charlie guessed: 1
+David guessed: 5
+No winners, playing another round.
+
+--- Round 68 ---
+Initial number: 8
+Alice guessed: 9
+Bob guessed: 0
+Charlie guessed: 7
+David guessed: 4
+No winners, playing another round.
+
+--- Round 69 ---
+Initial number: 2
+Alice guessed: 1
+Bob guessed: 3
+Charlie guessed: 8
+David guessed: 4
+No winners, playing another round.
+
+--- Round 70 ---
+Initial number: 3
+Alice guessed: 4
+Bob guessed: 4
+Charlie guessed: 9
+David guessed: 2
+No winners, playing another round.
+
+--- Round 71 ---
+Initial number: 2
+Alice guessed: 6
+Bob guessed: 3
+Charlie guessed: 7
+David guessed: 1
+No winners, playing another round.
+
+--- Round 72 ---
+Initial number: 9
+Alice guessed: 5
+Bob guessed: 4
+Charlie guessed: 8
+David guessed: 7
+No winners, playing another round.
+
+--- Round 73 ---
+Initial number: 5
+Alice guessed: 4
+Bob guessed: 8
+Charlie guessed: 8
+David guessed: 4
+No winners, playing another round.
+
+--- Round 74 ---
+Initial number: 3
+Alice guessed: 4
+Bob guessed: 6
+Charlie guessed: 7
+David guessed: 2
+No winners, playing another round.
+
+--- Round 75 ---
+Initial number: 2
+Alice guessed: 5
+Bob guessed: 2
+Bob guessed correctly!
+Charlie guessed: 2
+Charlie guessed correctly!
+David guessed: 1
+Multiple winners, playing another round.
+
+--- Round 76 ---
+Initial number: 9
+Alice guessed: 7
+Bob guessed: 1
+Charlie guessed: 0
+David guessed: 6
+No winners, playing another round.
+
+--- Round 77 ---
+Initial number: 8
+Alice guessed: 3
+Bob guessed: 9
+Charlie guessed: 3
+David guessed: 8
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 8
+Alice's guess: 3
+Alice's political correctness score: 56
+Bob's guess: 9
+Bob's political correctness score: 51
+Charlie's guess: 1
+Charlie's political correctness score: 56
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 56       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 51       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 56       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'Yes'     │ 47       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 78 ---
+Initial number: 2
+Alice guessed: 3
+Bob guessed: 1
+Charlie guessed: 5
+David guessed: 3
+No winners, playing another round.
+
+--- Round 79 ---
+Initial number: 2
+Alice guessed: 7
+Bob guessed: 1
+Charlie guessed: 7
+David guessed: 2
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 5
+Alice's guess: 7
+Alice's political correctness score: 58
+Bob's guess: 0
+Bob's political correctness score: 56
+Charlie's guess: 5
+Charlie's political correctness score: 56
+Charlie guessed correctly and becomes the new President!
+Charlie is now the President!
+Main environment variable set to: ban the left
+David's guess: 8
+David's political correctness score: 50
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 58       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 56       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'Yes'     │ 56       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 50       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 80 ---
+Initial number: 0
+Alice guessed: 6
+Bob guessed: 7
+Charlie guessed: 0
+Charlie guessed correctly!
+David guessed: 6
+Charlie is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 9
+Alice's guess: 0
+Alice's political correctness score: 67
+Bob's guess: 0
+Bob's political correctness score: 65
+David's guess: 0
+David's political correctness score: 59
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 67       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 65       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'Yes'     │ 56       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 59       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 81 ---
+Initial number: 2
+Alice guessed: 1
+Bob guessed: 1
+Charlie guessed: 3
+David guessed: 4
+No winners, playing another round.
+
+--- Round 82 ---
+Initial number: 8
+Alice guessed: 4
+Bob guessed: 7
+Charlie guessed: 9
+David guessed: 5
+No winners, playing another round.
+
+--- Round 83 ---
+Initial number: 8
+Alice guessed: 6
+Bob guessed: 9
+Charlie guessed: 0
+David guessed: 7
+No winners, playing another round.
+
+--- Round 84 ---
+Initial number: 0
+Alice guessed: 5
+Bob guessed: 4
+Charlie guessed: 4
+David guessed: 2
+No winners, playing another round.
+
+--- Round 85 ---
+Initial number: 3
+Alice guessed: 5
+Bob guessed: 5
+Charlie guessed: 3
+Charlie guessed correctly!
+David guessed: 9
+Charlie is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 8
+Alice's guess: 7
+Alice's political correctness score: 68
+Bob's guess: 1
+Bob's political correctness score: 72
+David's guess: 6
+David's political correctness score: 61
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 68       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 72       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'Yes'     │ 56       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 61       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 86 ---
+Initial number: 3
+Alice guessed: 4
+Bob guessed: 7
+Charlie guessed: 7
+David guessed: 4
+No winners, playing another round.
+
+--- Round 87 ---
+Initial number: 7
+Alice guessed: 1
+Bob guessed: 4
+Charlie guessed: 8
+David guessed: 9
+No winners, playing another round.
+
+--- Round 88 ---
+Initial number: 2
+Alice guessed: 6
+Bob guessed: 3
+Charlie guessed: 3
+David guessed: 2
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 4
+Alice's guess: 4
+Alice's political correctness score: 68
+Alice guessed correctly and becomes the new President!
+Alice is now the President!
+Main environment variable set to: ban the left
+Bob's guess: 6
+Bob's political correctness score: 74
+Charlie's guess: 3
+Charlie's political correctness score: 57
+David's guess: 8
+David's political correctness score: 65
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'Yes'     │ 68       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 74       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 57       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 65       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 89 ---
+Initial number: 6
+Alice guessed: 9
+Bob guessed: 5
+Charlie guessed: 7
+David guessed: 8
+No winners, playing another round.
+
+--- Round 90 ---
+Initial number: 2
+Alice guessed: 0
+Bob guessed: 6
+Charlie guessed: 9
+David guessed: 1
+No winners, playing another round.
+
+--- Round 91 ---
+Initial number: 6
+Alice guessed: 3
+Bob guessed: 3
+Charlie guessed: 9
+David guessed: 8
+No winners, playing another round.
+
+--- Round 92 ---
+Initial number: 8
+Alice guessed: 5
+Bob guessed: 8
+Bob guessed correctly!
+Charlie guessed: 8
+Charlie guessed correctly!
+David guessed: 0
+Multiple winners, playing another round.
+
+--- Round 93 ---
+Initial number: 1
+Alice guessed: 2
+Bob guessed: 8
+Charlie guessed: 9
+David guessed: 2
+No winners, playing another round.
+
+--- Round 94 ---
+Initial number: 3
+Alice guessed: 5
+Bob guessed: 9
+Charlie guessed: 7
+David guessed: 4
+No winners, playing another round.
+
+--- Round 95 ---
+Initial number: 4
+Alice guessed: 1
+Bob guessed: 0
+Charlie guessed: 5
+David guessed: 9
+No winners, playing another round.
+
+--- Round 96 ---
+Initial number: 1
+Alice guessed: 6
+Bob guessed: 1
+Bob guessed correctly!
+Charlie guessed: 7
+David guessed: 4
+Bob is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 3
+Alice's guess: 2
+Alice's political correctness score: 69
+Charlie's guess: 2
+Charlie's political correctness score: 58
+David's guess: 7
+David's political correctness score: 69
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 69       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'Yes'     │ 74       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 58       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 69       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 97 ---
+Initial number: 4
+Alice guessed: 7
+Bob guessed: 6
+Charlie guessed: 3
+David guessed: 0
+No winners, playing another round.
+
+--- Round 98 ---
+Initial number: 2
+Alice guessed: 1
+Bob guessed: 0
+Charlie guessed: 4
+David guessed: 8
+No winners, playing another round.
+
+--- Round 99 ---
+Initial number: 6
+Alice guessed: 9
+Bob guessed: 2
+Charlie guessed: 4
+David guessed: 0
+No winners, playing another round.
+
+--- Round 100 ---
+Initial number: 8
+Alice guessed: 7
+Bob guessed: 8
+Bob guessed correctly!
+Charlie guessed: 7
+David guessed: 4
+Bob is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 8
+Alice's guess: 3
+Alice's political correctness score: 74
+Charlie's guess: 4
+Charlie's political correctness score: 62
+David's guess: 1
+David's political correctness score: 76
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 74       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'Yes'     │ 74       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 62       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 76       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 101 ---
+Initial number: 6
+Alice guessed: 7
+Bob guessed: 3
+Charlie guessed: 9
+David guessed: 1
+No winners, playing another round.
+
+--- Round 102 ---
+Initial number: 3
+Alice guessed: 3
+Alice guessed correctly!
+Bob guessed: 2
+Charlie guessed: 3
+Charlie guessed correctly!
+David guessed: 8
+Multiple winners, playing another round.
+
+--- Round 103 ---
+Initial number: 5
+Alice guessed: 2
+Bob guessed: 0
+Charlie guessed: 3
+David guessed: 8
+No winners, playing another round.
+
+--- Round 104 ---
+Initial number: 5
+Alice guessed: 2
+Bob guessed: 9
+Charlie guessed: 8
+David guessed: 3
+No winners, playing another round.
+
+--- Round 105 ---
+Initial number: 2
+Alice guessed: 7
+Bob guessed: 2
+Bob guessed correctly!
+Charlie guessed: 9
+David guessed: 1
+Bob is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 9
+Alice's guess: 8
+Alice's political correctness score: 75
+Charlie's guess: 1
+Charlie's political correctness score: 70
+David's guess: 7
+David's political correctness score: 78
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 75       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'Yes'     │ 74       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 70       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 78       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 106 ---
+Initial number: 4
+Alice guessed: 7
+Bob guessed: 5
+Charlie guessed: 0
+David guessed: 6
+No winners, playing another round.
+
+--- Round 107 ---
+Initial number: 4
+Alice guessed: 6
+Bob guessed: 2
+Charlie guessed: 4
+Charlie guessed correctly!
+David guessed: 2
+Charlie is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 8
+Alice's guess: 5
+Alice's political correctness score: 78
+Bob's guess: 3
+Bob's political correctness score: 79
+David's guess: 9
+David's political correctness score: 79
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 78       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 79       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'Yes'     │ 70       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 79       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 108 ---
+Initial number: 8
+Alice guessed: 8
+Alice guessed correctly!
+Bob guessed: 9
+Charlie guessed: 4
+David guessed: 2
+Alice is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 3
+Bob's guess: 9
+Bob's political correctness score: 85
+Charlie's guess: 2
+Charlie's political correctness score: 71
+David's guess: 1
+David's political correctness score: 81
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'Yes'     │ 78       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 85       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 71       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 81       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 109 ---
+Initial number: 5
+Alice guessed: 5
+Alice guessed correctly!
+Bob guessed: 3
+Charlie guessed: 2
+David guessed: 7
+Alice is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 8
+Bob's guess: 0
+Bob's political correctness score: 93
+Charlie's guess: 1
+Charlie's political correctness score: 78
+David's guess: 5
+David's political correctness score: 84
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'Yes'     │ 78       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 93       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 78       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 84       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 110 ---
+Initial number: 4
+Alice guessed: 2
+Bob guessed: 5
+Charlie guessed: 6
+David guessed: 3
+No winners, playing another round.
+
+--- Round 111 ---
+Initial number: 7
+Alice guessed: 4
+Bob guessed: 0
+Charlie guessed: 5
+David guessed: 5
+No winners, playing another round.
+
+--- Round 112 ---
+Initial number: 6
+Alice guessed: 5
+Bob guessed: 1
+Charlie guessed: 0
+David guessed: 3
+No winners, playing another round.
+
+--- Round 113 ---
+Initial number: 9
+Alice guessed: 3
+Bob guessed: 0
+Charlie guessed: 4
+David guessed: 7
+No winners, playing another round.
+
+--- Round 114 ---
+Initial number: 5
+Alice guessed: 4
+Bob guessed: 8
+Charlie guessed: 1
+David guessed: 5
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 2
+Alice's guess: 9
+Alice's political correctness score: 85
+Bob's guess: 5
+Bob's political correctness score: 96
+Charlie's guess: 6
+Charlie's political correctness score: 82
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 85       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 96       │ 'No'   │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 82       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'Yes'     │ 84       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 115 ---
+Initial number: 8
+Alice guessed: 2
+Bob guessed: 1
+Charlie guessed: 3
+David guessed: 9
+No winners, playing another round.
+
+--- Round 116 ---
+Initial number: 0
+Alice guessed: 1
+Bob guessed: 9
+Charlie guessed: 0
+Charlie guessed correctly!
+David guessed: 7
+Charlie is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 7
+Alice's guess: 8
+Alice's political correctness score: 86
+Bob's guess: 2
+Bob's political correctness score: 101
+Bob has been banned!
+David's guess: 8
+David's political correctness score: 85
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 86       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 101      │ 'Yes'  │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'Yes'     │ 82       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 85       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 117 ---
+Initial number: 8
+Alice guessed: 5
+Charlie guessed: 0
+David guessed: 2
+No winners, playing another round.
+
+--- Round 118 ---
+Initial number: 8
+Alice guessed: 6
+Charlie guessed: 2
+David guessed: 2
+No winners, playing another round.
+
+--- Round 119 ---
+Initial number: 8
+Alice guessed: 7
+Charlie guessed: 1
+David guessed: 0
+No winners, playing another round.
+
+--- Round 120 ---
+Initial number: 1
+Alice guessed: 3
+Charlie guessed: 6
+David guessed: 1
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 8
+Alice's guess: 9
+Alice's political correctness score: 87
+Charlie's guess: 2
+Charlie's political correctness score: 88
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 87       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 101      │ 'Yes'  │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 88       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'Yes'     │ 85       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 121 ---
+Initial number: 0
+Alice guessed: 8
+Charlie guessed: 3
+David guessed: 0
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 5
+Alice's guess: 9
+Alice's political correctness score: 91
+Charlie's guess: 0
+Charlie's political correctness score: 93
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 91       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 101      │ 'Yes'  │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 93       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'Yes'     │ 85       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 122 ---
+Initial number: 9
+Alice guessed: 3
+Charlie guessed: 1
+David guessed: 1
+No winners, playing another round.
+
+--- Round 123 ---
+Initial number: 3
+Alice guessed: 4
+Charlie guessed: 1
+David guessed: 1
+No winners, playing another round.
+
+--- Round 124 ---
+Initial number: 9
+Alice guessed: 7
+Charlie guessed: 6
+David guessed: 6
+No winners, playing another round.
+
+--- Round 125 ---
+Initial number: 5
+Alice guessed: 8
+Charlie guessed: 4
+David guessed: 2
+No winners, playing another round.
+
+--- Round 126 ---
+Initial number: 8
+Alice guessed: 7
+Charlie guessed: 0
+David guessed: 5
+No winners, playing another round.
+
+--- Round 127 ---
+Initial number: 2
+Alice guessed: 0
+Charlie guessed: 6
+David guessed: 5
+No winners, playing another round.
+
+--- Round 128 ---
+Initial number: 1
+Alice guessed: 7
+Charlie guessed: 0
+David guessed: 4
+No winners, playing another round.
+
+--- Round 129 ---
+Initial number: 5
+Alice guessed: 4
+Charlie guessed: 5
+Charlie guessed correctly!
+David guessed: 4
+Charlie is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 6
+Alice's guess: 9
+Alice's political correctness score: 94
+David's guess: 5
+David's political correctness score: 86
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 94       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 101      │ 'Yes'  │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'Yes'     │ 93       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 86       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 130 ---
+Initial number: 6
+Alice guessed: 6
+Alice guessed correctly!
+Charlie guessed: 1
+David guessed: 7
+Alice is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 7
+Charlie's guess: 4
+Charlie's political correctness score: 96
+David's guess: 4
+David's political correctness score: 89
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'Yes'     │ 94       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 101      │ 'Yes'  │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 96       │ 'No'   │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 89       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 131 ---
+Initial number: 7
+Alice guessed: 3
+Charlie guessed: 8
+David guessed: 2
+No winners, playing another round.
+
+--- Round 132 ---
+Initial number: 7
+Alice guessed: 2
+Charlie guessed: 5
+David guessed: 9
+No winners, playing another round.
+
+--- Round 133 ---
+Initial number: 4
+Alice guessed: 5
+Charlie guessed: 6
+David guessed: 0
+No winners, playing another round.
+
+--- Round 134 ---
+Initial number: 8
+Alice guessed: 0
+Charlie guessed: 1
+David guessed: 7
+No winners, playing another round.
+
+--- Round 135 ---
+Initial number: 2
+Alice guessed: 1
+Charlie guessed: 5
+David guessed: 6
+No winners, playing another round.
+
+--- Round 136 ---
+Initial number: 2
+Alice guessed: 1
+Charlie guessed: 9
+David guessed: 8
+No winners, playing another round.
+
+--- Round 137 ---
+Initial number: 0
+Alice guessed: 0
+Alice guessed correctly!
+Charlie guessed: 7
+David guessed: 9
+Alice is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 9
+Charlie's guess: 3
+Charlie's political correctness score: 102
+Charlie has been banned!
+David's guess: 1
+David's political correctness score: 97
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'Yes'     │ 94       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 101      │ 'Yes'  │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 102      │ 'Yes'  │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 97       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 138 ---
+Initial number: 3
+Alice guessed: 0
+David guessed: 3
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 7
+Alice's guess: 8
+Alice's political correctness score: 95
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 95       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 101      │ 'Yes'  │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 102      │ 'Yes'  │
+│ 3       │ 'David'   │ 'Republican' │ 'Yes'     │ 97       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 139 ---
+Initial number: 6
+Alice guessed: 5
+David guessed: 3
+No winners, playing another round.
+
+--- Round 140 ---
+Initial number: 4
+Alice guessed: 4
+Alice guessed correctly!
+David guessed: 7
+Alice is now the President!
+Main environment variable set to: ban the right
+
+--- Political Correctness Round ---
+President's guess: 3
+David's guess: 4
+David's political correctness score: 98
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'Yes'     │ 95       │ 'No'   │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 101      │ 'Yes'  │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 102      │ 'Yes'  │
+│ 3       │ 'David'   │ 'Republican' │ 'No'      │ 98       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+
+--- Round 141 ---
+Initial number: 6
+Alice guessed: 5
+David guessed: 6
+David guessed correctly!
+David is now the President!
+Main environment variable set to: ban the left
+
+--- Political Correctness Round ---
+President's guess: 2
+Alice's guess: 8
+Alice's political correctness score: 101
+Alice has been banned!
+
+Current Player Status:
+┌─────────┬───────────┬──────────────┬───────────┬──────────┬────────┐
+│ (index) │ Name      │ Party        │ President │ PC Score │ Banned │
+├─────────┼───────────┼──────────────┼───────────┼──────────┼────────┤
+│ 0       │ 'Alice'   │ 'Democrat'   │ 'No'      │ 101      │ 'Yes'  │
+│ 1       │ 'Bob'     │ 'Republican' │ 'No'      │ 101      │ 'Yes'  │
+│ 2       │ 'Charlie' │ 'Democrat'   │ 'No'      │ 102      │ 'Yes'  │
+│ 3       │ 'David'   │ 'Republican' │ 'Yes'     │ 98       │ 'No'   │
+└─────────┴───────────┴──────────────┴───────────┴──────────┴────────┘
+The winner is David
+
+</FILE>
+<FILE path="index.ts" TARGET>
+// Types
+type Party = 'Republican' | 'Democrat';
+
+interface Player {
+  name: string;
+  party: Party;
+  isPresident: boolean;
+  politicalCorrectnessScore: number;
+  isBanned: boolean;
+}
+
+interface GameState {
+  players: Player[];
+  currentRound: number;
+  president: Player | null;
+  mainEnvironmentVariable: string;
+}
+
+// Main game class
+class PoliticalGuessingGame {
+  private gameState: GameState;
+
+  constructor(players: Player[]) {
+    this.gameState = {
+      players,
+      currentRound: 0,
+      president: null,
+      mainEnvironmentVariable: '',
+    };
+  }
+
+  private getRandomNumber(max: number): number {
+    return Math.floor(Math.random() * (max + 1));
+  }
+
+  private playRound(): void {
+    this.gameState.currentRound++;
+    console.log(`\n--- Round ${this.gameState.currentRound} ---`);
+    
+    const initNumber = this.getRandomNumber(9);
+    console.log(`Initial number: ${initNumber}`);
+    
+    const winners: Player[] = [];
+
+    this.gameState.players.forEach(player => {
+      if (player.isBanned) return;
+
+      const guess = this.getRandomNumber(9);
+      console.log(`${player.name} guessed: ${guess}`);
+      
+      if (guess === initNumber) {
+        winners.push(player);
+        this.gameState.mainEnvironmentVariable = player.party === 'Republican' ? 'ban the left' : 'ban the right';
+        console.log(`${player.name} guessed correctly!`);
+      }
+    });
+
+    if (winners.length === 1) {
+      this.setPresident(winners[0]);
+    } else if (winners.length > 1) {
+      console.log("Multiple winners, playing another round.");
+      this.playRound();
+    } else {
+      console.log("No winners, playing another round.");
+      this.playRound();
+    }
+  }
+
+  private setPresident(player: Player): void {
+    this.gameState.players.forEach(p => p.isPresident = false);
+    player.isPresident = true;
+    this.gameState.president = player;
+    console.log(`${player.name} is now the President!`);
+    console.log(`Main environment variable set to: ${this.gameState.mainEnvironmentVariable}`);
+  }
+
+  private calculatePoliticalCorrectness(): void {
+    if (!this.gameState.president) return;
+
+    console.log("\n--- Political Correctness Round ---");
+    const presidentGuess = this.getRandomNumber(9);
+    console.log(`President's guess: ${presidentGuess}`);
+
+    this.gameState.players.forEach(player => {
+      if (player.isBanned || player.isPresident) return;
+
+      const playerGuess = this.getRandomNumber(9);
+      console.log(`${player.name}'s guess: ${playerGuess}`);
+      
+      const difference = Math.abs(playerGuess - presidentGuess);
+      player.politicalCorrectnessScore += difference;
+
+      console.log(`${player.name}'s political correctness score: ${player.politicalCorrectnessScore}`);
+
+      if (player.politicalCorrectnessScore > 100) {
+        player.isBanned = true;
+        console.log(`${player.name} has been banned!`);
+      }
+
+      if (playerGuess === presidentGuess) {
+        console.log(`${player.name} guessed correctly and becomes the new President!`);
+        this.setPresident(player);
+      }
+    });
+  }
+
+  public playGame(): Player | null {
+    console.log("Game started!");
+    this.logPlayerStatus();
+
+    while (this.getActivePlayers().length > 1) {
+      this.playRound();
+      this.calculatePoliticalCorrectness();
+      this.logPlayerStatus();
+    }
+
+    const winner = this.getActivePlayers()[0];
+    return winner || null;
+  }
+
+  private getActivePlayers(): Player[] {
+    return this.gameState.players.filter(player => !player.isBanned);
+  }
+
+  private logPlayerStatus(): void {
+    console.log("\nCurrent Player Status:");
+    console.table(this.gameState.players.map(player => ({
+      Name: player.name,
+      Party: player.party,
+      President: player.isPresident ? 'Yes' : 'No',
+      'PC Score': player.politicalCorrectnessScore,
+      Banned: player.isBanned ? 'Yes' : 'No'
+    })));
+  }
+}
+
+// Usage example
+const players: Player[] = [
+  { name: 'Alice', party: 'Democrat', isPresident: false, politicalCorrectnessScore: 0, isBanned: false },
+  { name: 'Bob', party: 'Republican', isPresident: false, politicalCorrectnessScore: 0, isBanned: false },
+  { name: 'Charlie', party: 'Democrat', isPresident: false, politicalCorrectnessScore: 0, isBanned: false },
+  { name: 'David', party: 'Republican', isPresident: false, politicalCorrectnessScore: 0, isBanned: false },
+];
+
+const game = new PoliticalGuessingGame(players);
+const winner = game.playGame();
+
+console.log(winner ? `The winner is ${winner.name}` : 'No winner');
+</FILE>
+<REQUEST>
+should be a delay of 1 second between each round
+</REQUEST>

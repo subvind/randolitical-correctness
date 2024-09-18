@@ -1,0 +1,14 @@
+{
+  "name": "randolitical-correctness",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts 2>&1 | tee start:dev.stdout.txt"
+  },
+  "author": "Travis Burandt",
+  "description": "",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}
